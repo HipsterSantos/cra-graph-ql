@@ -25,8 +25,8 @@ const schema = buildSchema(`
 
     type Message { 
         id: ID
-        message: String,
-        createdAt: String
+        message: String!
+        createdAt: String!
     }
 `)
 
