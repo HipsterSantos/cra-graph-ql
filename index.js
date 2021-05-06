@@ -37,6 +37,16 @@ const db  ={ users:[
         {id: '1', userId: '1',body: 'Hello',createdAt: Date.now()},
         {id: '2',userId: '2', body: 'Hi', createdAt: Date.now()}
     ]}
+
+class User{
+    constructor(user){
+        Object.assign(this,user);
+    }
+
+    message(){
+        return db.messages.filter(message  => message.userId === this.id)
+    }
+}
 const rootValue = { 
         users:() => db.users,
         user: args => db.users.find( user => user.id === args.id) ,
